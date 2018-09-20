@@ -35,9 +35,10 @@
         <!-- Navbar Right Side -->
         <div class="navbar-nav">
           {% if user.is_authenticated %}
+            <a class="nav-item nav-link {% block create-active %}{% endblock %}" href="{%  url 'post-create' %}">Create Post</a>
             <a class="nav-item nav-link {% block profile-active %}{% endblock %}" href="{%  url 'profile' %}">Profile</a>
             <a class="nav-item nav-link {% block logout-active %}{% endblock %}" href="{%  url 'logout' %}">Logout</a>
-            <a class="nav-item nav-link {% block user-active %}{% endblock %}" href="{%  url 'logout' %}"><i class="fa fa-smile-o" aria-hidden="true"></i> {{user.username}}</a>
+            <a class="nav-item nav-link {% block user-active %}{% endblock %}" href="{%  url 'profile' %}"><i class="fa fa-smile-o" aria-hidden="true"></i> {{user.username}}</a>
           {% else %}
             <a class="nav-item nav-link {% block login-active %}{% endblock %}" href="{%  url 'login' %}">Login</a>
             <a class="nav-item nav-link {% block register-active %}{% endblock %}" href="{%  url 'register' %}">Register</a>
