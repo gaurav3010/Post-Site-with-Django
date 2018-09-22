@@ -12,6 +12,7 @@
 {% endblock user-active %}
 
 {% block content %}
+	<h1 class="mb-3"><span class="text-primary">{{ view.kwargs.username }}</span> <span class="text-warning">({{ page_obj.paginator.count }})</span></h1>
 	{% for post in posts %}
 		<article class="media content-section">
 		  <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
